@@ -1,6 +1,6 @@
 {
     "name": "scraperwiki.licences",
-    "version": "1",
+    "version": "1.0.0",
     "private": true,
     "dependencies": {
         "coffee-script": "1.3.2",
