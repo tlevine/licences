@@ -3,3 +3,21 @@
 https://box.scraperwiki.com/scraperwiki/licences
 
 This box contains scripts to check ScraperWiki repositories on Github have explicit licences.
+
+## How to install (on a new server) ##
+
+    $ git clone scraperwiki.licences@box.scraperwiki.com:. licences
+    $ cd licences
+    $ npm install
+    $ echo "export PATH=$PATH:~/node_modules/.bin" >> ~/.profile
+
+## How to use ##
+
+    $ cd licences
+    $ ./check_licences_in_github.coffee
+
+## To marvel at how much difference asynchronous coffeescript makes ##
+
+    $ cd licences
+    $ time ./check_licences_in_github.coffee
+    $ time ./check_licences_in_github.py
