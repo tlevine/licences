@@ -2,4 +2,4 @@
 
 https://box.scraperwiki.com/scraperwiki/licences
 
-Describe your box in here!
+This box contains scripts to check ScraperWiki repositories on Github have explicit licences.
