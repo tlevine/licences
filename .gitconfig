@@ -1,2 +1,5 @@
 [receive]
 	denyCurrentBranch = ignore
+[user]
+	email = francis@scraperwiki.com
+	name = Francis Irving
