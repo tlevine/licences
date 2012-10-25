@@ -15,6 +15,7 @@ scraperwiki.sqlite
 .emacs.d
 
 ## NODE
+node_modules
 npm-debug.log
 .npm
 
