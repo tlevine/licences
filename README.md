@@ -2,7 +2,8 @@
 
 https://box.scraperwiki.com/scraperwiki/licences
 
-This box contains scripts to check ScraperWiki repositories on Github have explicit licences.
+This box contains scripts to check ScraperWiki repositories on Github have
+explicit licences and to apply such licences.
 
 ## How to install (on a new server) ##
 
