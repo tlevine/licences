@@ -13,5 +13,12 @@ This box contains scripts to check ScraperWiki repositories on Github have expli
 
 ## How to use ##
 
+Check licences.
+
     $ cd licences
     $ ./check_licences_in_github.coffee
+
+Add licences to repositories that lack them.
+
+    $ cd licences
+    $ ./add_licence_to_repository.sh git@github.com:scraperwiki/licences.git
