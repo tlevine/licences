@@ -15,9 +15,3 @@ This box contains scripts to check ScraperWiki repositories on Github have expli
 
     $ cd licences
     $ ./check_licences_in_github.coffee
-
-## To marvel at how much difference asynchronous coffeescript makes ##
-
-    $ cd licences
-    $ time ./check_licences_in_github.coffee
-    $ time ./check_licences_in_github.py
