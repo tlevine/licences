@@ -11,8 +11,7 @@ compliant = 0
 total = 0
 
 hub = "https://raw.github.com"
-ProperOrg = "ScraperWiki"
-org = ProperOrg.toLowerCase()
+username = "tlevine"
 
 print = (status, name) ->
   prefixes = ["\x1b[31m ✗ ", "\x1b[32m ✓ ", "\x1b[33m ✓ "]
@@ -27,8 +26,12 @@ check_licence = (repo, callback) ->
     # check the existence of.
     # *cb* will be called with false if the file does not exist;
     # true otherwise.
-    request.get "#{hub}/#{org}/#{repo.name}/master/#{fname}",
-      (err, resp) -> cb(resp.statusCode == 200)
+    options =
+      method: 'get'
+      url: "#{hub}/#{username}/#{repo.name}/master/#{fname}",
+      headers:
+       'User-Agent': 'HTTPie/0.5.0'
+    request.get options, (err, resp) -> cb(resp.statusCode == 200)
   async.detectSeries ['LICENCE', 'LICENSE', 'LICENSE.txt'],
     check_single,
     (name) ->
@@ -42,11 +45,12 @@ check_licence = (repo, callback) ->
           print 2, "#{repo.name} (#{name})"
         callback null, 1
 
-request.get "https://api.github.com/orgs/#{org}/repos",
+request.get "https://api.github.com/users/#{username}/repos",
   (err, resp, body) ->
     repos = JSON.parse(body)
+    console.log repos
     total = repos.length
     console.log "Scanning licences for #{total} repositories..."
     async.map repos, check_licence, ->
       percentage = Math.round(compliant*100/total)
-      console.log "#{ProperOrg} is #{percentage}% compliant"
+      console.log "#{username} is #{percentage}% compliant"
